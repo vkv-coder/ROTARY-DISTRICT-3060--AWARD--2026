@@ -316,18 +316,14 @@
   }
 
   function highlightActiveFee() {
-    currentFee = getCurrentFee();
-    document.querySelectorAll('.fees-table tr').forEach(function(r){ r.classList.remove('active-fee'); });
-    document.getElementById('badge-eb').style.display = 'none';
-    if (currentFee === 1800) {
-      document.getElementById('row-earlybird').classList.add('active-fee');
-      document.getElementById('badge-eb').style.display = 'inline';
-    } else if (currentFee === 1800) {
-      document.getElementById('row-regular').classList.add('active-fee');
-    } else {
-      document.getElementById('row-spot').classList.add('active-fee');
-    }
+  currentFee = getCurrentFee();
+  document.querySelectorAll('.fees-table tr').forEach(function(r){ r.classList.remove('active-fee'); });
+  if (currentFee === 1800) {
+    document.getElementById('row-regular').classList.add('active-fee');
+  } else {
+    document.getElementById('row-spot').classList.add('active-fee');
   }
+}
 
   function selectCount(btn, count) {
     currentCount = count;
