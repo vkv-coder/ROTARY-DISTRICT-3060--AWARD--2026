@@ -293,8 +293,8 @@
 
   function getCurrentFee() {
     var today = new Date();
-   
-    if (today <= new Date('2026-06-27')) return 1800;
+    var cutoff = new Date('2026-06-27'); cutoff.setHours(23,59,59,999);
+    if (today <= cutoff) return 1800;
     return 2000;
   }
 
